@@ -19,6 +19,7 @@ class CheckInsController < ApplicationController
 
   # GET /check_ins/1/edit
   def edit
+
   end
 
   # POST /check_ins
@@ -69,6 +70,6 @@ class CheckInsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def check_in_params
-      params.fetch(:check_in, {})
+      params.require(:check_in).permit(:status, :time)
     end
 end

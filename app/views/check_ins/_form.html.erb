@@ -11,6 +11,29 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.time_field :time, :value => Time.now.strftime("%H:%M:%S") %>
+
+    <% new_status = 0 %>
+
+    <% curr_time = Time.now %>
+    <% check_a = Time.parse("9:30 am") %>
+    <% check_c = Time.parse("9:35 am") %>
+    <!-- If time less than 9:30 -->
+    <% if curr_time < check_a %>
+      <% new_status = 1 %>
+    <!-- If time between 9:30 and 9:35-->
+    <%  elsif false %>
+      <% new_status = 6 %>
+    <!-- If time greater than 9:35 -->
+    <%  elsif curr_time > check_c %>
+      <% new_status = 3 %>
+    <% end %>
+
+
+    <%= form.number_field :status, :value => new_status %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
