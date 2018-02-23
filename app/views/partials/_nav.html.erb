@@ -1,5 +1,3 @@
-
-
 <nav class="navbar navbar-default navbar-inverse">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -15,7 +13,7 @@
       <ul class = "nav navbar-nav navbar-right">
         <li class="navbar-brand">
         <% if user_signed_in? %>
-        Welcome: <%= current_user.first_name %>
+        Welcome: <%= current_user.name %>
         <% else %>
         Please Log In
         <% end %>
