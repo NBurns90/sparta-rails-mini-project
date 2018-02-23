@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field hidden">
     <%= form.time_field :time, :value => Time.now.strftime("%H:%M:%S") %>
 
     <% new_status = 0 %>
@@ -23,8 +23,8 @@
     <% if curr_time < check_a %>
       <% new_status = 1 %>
     <!-- If time between 9:30 and 9:35-->
-    <%  elsif false %>
-      <% new_status = 6 %>
+    <%  elsif curr_time >= check_a && curr_time < check_c %>
+      <% new_status = 2 %>
     <!-- If time greater than 9:35 -->
     <%  elsif curr_time > check_c %>
       <% new_status = 3 %>
@@ -35,6 +35,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= link_to form.submit, destroy_user_session_path, method: :delete %>
   </div>
 <% end %>
