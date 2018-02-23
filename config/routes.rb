@@ -8,5 +8,12 @@ Rails.application.routes.draw do
 # Login -> check_ins/id/edit
 # get '/users/sign_in', to: 'check_ins/edit#edit'
 
+<<<<<<< HEAD
 root 'static#landing'
+=======
+  get '/users', to: 'records#index'
+  get '/records/show/:id', to: 'records#show'
+
+  root 'static#landing'
+>>>>>>> neodev
 end
