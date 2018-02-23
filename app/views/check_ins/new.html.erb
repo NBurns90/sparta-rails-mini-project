@@ -15,7 +15,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.text_field :date, :value => Time.now.strftime("%d-%m-%Y") %>
+    <%= form.text_field :date, :value => Time.now.tomorrow.strftime("%d-%m-%Y") %>
     <%= form.text_field :time, :value => Time.parse("00:00 am").strftime("%H:%M:%S") %>
     <%= form.number_field :status, :value => 0 %>
     <%= form.number_field :user_id, :value => @user.id %>

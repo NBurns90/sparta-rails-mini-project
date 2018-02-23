@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :check_ins
+# Login -> check_ins/id/edit
+# get '/users/sign_in', to: 'check_ins/edit#edit'
 
-  root 'static#landing'
+root 'static#landing'
 end
