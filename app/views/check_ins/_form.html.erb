@@ -19,8 +19,12 @@
     <% curr_time = Time.now %>
     <% check_a = Time.parse("9:30 am") %>
     <% check_c = Time.parse("9:35 am") %>
+
+    <%  if check_in.status > 0 %>
+      <% new_status = 4 %>
+      <!-- Make a new checkin -->
     <!-- If time less than 9:30 -->
-    <% if curr_time < check_a %>
+    <% elsif curr_time < check_a %>
       <% new_status = 1 %>
     <!-- If time between 9:30 and 9:35-->
     <%  elsif curr_time >= check_a && curr_time < check_c %>
@@ -35,6 +39,6 @@
   </div>
 
   <div class="actions">
-    <%= link_to form.submit, destroy_user_session_path, method: :delete %>
+    <%= form.submit %>
   </div>
 <% end %>

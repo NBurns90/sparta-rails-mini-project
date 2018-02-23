@@ -43,7 +43,7 @@ class CheckInsController < ApplicationController
   def update
     respond_to do |format|
       if @check_in.update(check_in_params)
-        format.html { redirect_to @check_in, notice: 'Check in was successfully updated.' }
+        format.html { redirect_to "/users/sign_out"}
         format.json { render :show, status: :ok, location: @check_in }
       else
         format.html { render :edit }
