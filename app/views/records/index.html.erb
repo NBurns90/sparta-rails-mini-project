@@ -1,0 +1,6 @@
+<h1>User Records</h1>
+
+<% @users.each do |user| %>
+  <a href="/records/show/<%= user.id %>"><%= user.name %></a>
+  <%= user.course %>
+<% end %>
