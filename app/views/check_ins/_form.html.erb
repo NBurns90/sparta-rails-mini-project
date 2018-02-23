@@ -11,6 +11,21 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :check_in_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time %>
+    <%= form.time_field :time, id: :check_in_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_field :date, id: :check_in_date %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
