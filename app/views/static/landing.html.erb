@@ -11,8 +11,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <% @check_ins.each do |check_in| %>
+
+        <% @check_ins.each do |check_in| %>
+          <tr>
           <% status = "" %>
           <% if check_in.status == 1 %>
             <% status = "On Time" %>
@@ -27,8 +28,8 @@
             <td><%= check_in.user.course %></td>
             <td><%= check_in.time %></td>
             <td><%= status %></td>
-          <% end %>
-        </tr>
+          </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
