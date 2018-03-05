@@ -1,0 +1,34 @@
+<h1>Sparta Academy</h1>
+
+<div class="bs-example" data-example-id="hoverable-table">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Course</th>
+          <th>Time</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @check_ins.each do |check_in| %>
+          <tr>
+          <% status = "" %>
+          <% if check_in.status == 1 %>
+            <% status = "On Time" %>
+          <%  elsif check_in.status == 2 %>
+             <% status = "Slight Late" %>
+          <%  elsif check_in.status == 3 %>
+            <% status = "Very Late" %>
+          <%  else %>
+            <% status = "Not Present" %>
+          <% end %>
+            <td><%= check_in.user.name %></td>
+            <td><%= check_in.user.course %></td>
+            <td><%= check_in.time %></td>
+            <td><%= status %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>

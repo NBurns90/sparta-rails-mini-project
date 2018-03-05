@@ -1,0 +1,20 @@
+<h1>User Records</h1>
+
+<div class="bs-example" data-example-id="hoverable-table">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Course</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><a href="/records/show/<%= user.id %>"><%= user.name %></a></td>
+            <td><%= user.course %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>

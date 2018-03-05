@@ -1,0 +1,29 @@
+<h1>New Check In</h1>
+<% check_in = @check_in %>
+
+<%= form_with(model: check_in, local: true) do |form| %>
+  <% if check_in.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(check_in.errors.count, "error") %> prohibited this check_in from being saved:</h2>
+
+      <ul>
+      <% check_in.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :date, :value => Time.now.tomorrow.strftime("%d-%m-%Y") %>
+    <%= form.text_field :time, :value => Time.parse("00:00 am").strftime("%H:%M:%S") %>
+    <%= form.number_field :status, :value => 0 %>
+    <%= form.number_field :user_id, :value => @user.id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', check_ins_path %>

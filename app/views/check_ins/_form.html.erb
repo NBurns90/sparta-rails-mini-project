@@ -1,0 +1,43 @@
+<%= form_with(model: check_in, local: true) do |form| %>
+  <% if check_in.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(check_in.errors.count, "error") %> prohibited this check_in from being saved:</h2>
+
+      <ul>
+      <% check_in.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field hidden">
+    <%= form.time_field :time, :value => Time.now.strftime("%H:%M:%S") %>
+
+    <% new_status = 0 %>
+
+    <% curr_time = Time.now %>
+    <% check_a = Time.parse("9:30 am") %>
+    <% check_c = Time.parse("9:35 am") %>
+
+    <%  if check_in.status > 0 %>
+      <% new_status = 4 %>
+    <!-- If time less than 9:30 -->
+    <% elsif curr_time < check_a %>
+      <% new_status = 1 %>
+    <!-- If time between 9:30 and 9:35-->
+    <%  elsif curr_time >= check_a && curr_time < check_c %>
+      <% new_status = 2 %>
+    <!-- If time greater than 9:35 -->
+    <%  elsif curr_time > check_c %>
+      <% new_status = 3 %>
+    <% end %>
+
+
+    <%= form.number_field :status, :value => new_status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
