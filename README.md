@@ -62,19 +62,19 @@ http://localhost:3000/check_ins
 ## Screenshots
 
 Index Page, Logged in
-![screenshot](./README_images/Screen Shot 2018-03-05 at 11.34.30.png)
+![screenshot1](./README_images/ScreenShot2018-03-05at11.34.30.png)
 
 Sign Up Page
-![screenshot](./README_images/Screen Shot 2018-03-05 at 11.38.01.png)
+![screenshot2](./README_images/ScreenShot2018-03-05at11.38.01.png)
 
 Log In Page
-![screenshot](./README_images/Screen Shot 2018-03-05 at 11.38.14.png)
+![screenshot3](./README_images/ScreenShot2018-03-05at11.38.14.png)
 
 Check Ins Index
-![screenshot](./README_images/Screen Shot 2018-03-05 at 11.40.09.png)
+![screenshot4](./README_images/ScreenShot2018-03-05at11.40.09.png)
 
 New Check In
-![screenshot](./README_images/Screen Shot 2018-03-05 at 11.40.17.png)
+![screenshot5](./README_images/ScreenShot2018-03-05at11.40.17.png)
 
 # Contributors
 
